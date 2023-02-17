@@ -1,12 +1,8 @@
 <h1 align="center">Приветствуем вас
 <img src="https://github.com/blackcater/blackcater/raw/main/images/Hi.gif" height="32"/></h1>
-<h3 align="center">Команда</h3>
-<h4 align="center">Юрченко Вадим<br>
-Вострецов Андрей<br>Булатов Артем<br>Бежин Евгений</h4>
 <h1 align="center"><a href="https://github.com/AlchiProMent/GrForecast.git" target="_blank">"Прогнозирование цен"</a></h1>
-<h2 align="center">Дипломный проект</h2>
-<h3 align="center">Руководитель: Дмитрий Румянцев</h3>
-<h4 align="center">Москва, 2023 г.</h4>
+
+<h4 align="center">2023 г</h4>
 
 
 ## Введение
