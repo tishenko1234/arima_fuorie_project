@@ -29,13 +29,12 @@ def weekly_data(df_with_product_price):
     """ Функция позволяет преобразовать дата фрейм так, чтобы на одну неделю приходилось одно значение
         и формирует словарь, в котором содержится подобный дата-фрейм для каждого региона"""
     all_regions = {}
-    # list(df_product_price['region_name'].unique())
 
-    for region in ['Белгородская область','Пермский край']:
+    for region in list(df_with_product_price['region_name'].unique()):
         all_products = {}
         all_products_test = {}
-        product_list_weekly = tqdm(list(df_product_price['product'].unique()), desc='Преобразование даты в недельный формат',
-                            leave=True, total=len(list(df_product_price['product'].unique())))
+        product_list_weekly = tqdm(list(df_with_product_price['product'].unique()), desc='Преобразование даты в недельный формат',
+                            leave=True, total=len(list(df_with_product_price['product'].unique())))
         for product in product_list_weekly:
             product_list_weekly.set_description(f"""Преобразование даты в недельный формат в регионе {region}: {product}""")
             product_list_weekly.refresh()
@@ -121,7 +120,7 @@ def clean_data(df_prices, nan_percent_total: int = 30, visualization=False):
 
 def arima_fourie(df_for_one_product, test_set=False, test_size=8,
                  data_depth=52, forecast_size=8, max_fourie_coeff=8,
-                 today=date.today(), region_code={}, product_name="Название продукта"):
+                 today=date.today(), region_code={}, product_name="Название продукта", region ="Название региона"):
     """Функция позволяет рассчитать прогноз для временного ряда и
     вывести дата-фрейм с прогнозом и доверительными интервалами"""
     if test_set:

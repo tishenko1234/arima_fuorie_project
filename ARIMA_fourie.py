@@ -48,7 +48,8 @@ for region in df_product_price_weekly.keys():
         # Рассчитываем прогноз
         df_one_product_prediction = arima_fourie(df_for_one_product=df_one_product, test_set=False, test_size=0,
                                                  data_depth=52, forecast_size=8, max_fourie_coeff=8,
-                                                 today=last_date, region_code=region_code_dict, product_name=product)
+                                                 today=last_date, region_code=region_code_dict, product_name=product,
+                                                 region=region)
         # Добавляем к прогнозу последние данные, загруженные в бд
         df_one_product_prediction = df_one_product_prediction.append(pd.DataFrame({'date': [last_date],
                                                                                    'region_name': [region],
